@@ -4,9 +4,8 @@ pipeline{
     triggers{
         pollSCM('H 0 * * 2')
      }
-  agent {
-    label "slave02"
-  }
+  agent any
+  
   tools {
   maven 'maven'
   jdk 'java'
