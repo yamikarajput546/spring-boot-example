@@ -10,8 +10,13 @@ pipeline{
   
     
     stages{
-        stage("Testing"){
+        stage("Clean"){
             steps{
+                sh 'mvn clean'
+            }
+        }
+      stage("Test"){
+          steps{
                 sh 'mvn clean test'
             }
         }
