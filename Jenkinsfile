@@ -1,9 +1,9 @@
 
   
 pipeline{
-    // triggers{
-    //     pollSCM('H 0 * * 2')
-    // }
+    triggers{
+        pollSCM('H 0 * * 2')
+     }
   agent {
     label "slave02"
   }
