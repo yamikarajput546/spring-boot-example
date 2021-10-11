@@ -8,10 +8,7 @@ pipeline{
     label "slave02"
   }
   
-    tools { 
-        maven 'apache-maven-3.6.0'
-        jdk 'jdk11'
-    }
+    
     stages{
         stage("Testing"){
             steps{
