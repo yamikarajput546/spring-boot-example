@@ -7,7 +7,9 @@ pipeline{
   agent {
     label "slave02"
   }
-  
+  tools {
+  maven 'maven'
+}
     
     stages{
         stage("Clean"){
