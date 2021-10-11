@@ -9,8 +9,8 @@ pipeline{
   }
   
     tools { 
-        maven 'maven' 
-        jdk 'jdk11' 
+        maven "maven" 
+        jdk "jdk11"
     }
     stages{
         stage("Testing"){
