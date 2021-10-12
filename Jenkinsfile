@@ -1,4 +1,7 @@
 pipeline{
+	//triggers{
+        //pollSCM('30 0 1 8 *')
+     //}
     agent any
     tools { 
         maven 'maven' 
