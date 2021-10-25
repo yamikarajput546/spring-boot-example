@@ -6,10 +6,19 @@ pipeline {
         }
     stages {
 
-        stage('Testing') {
-            steps {
-                echo 'Testing the application...'
-                sh "mvn clean test"
+        stage("Cleanup")
+        {
+            steps
+            {
+                sh 'mvn clean'
+            }
+        }
+        
+        stage("Test")
+        {
+            steps
+            {
+                sh 'mvn test'
             }
         }
     }
