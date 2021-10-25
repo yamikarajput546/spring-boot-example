@@ -8,15 +8,32 @@ pipeline{
         jdk 'jdk 11'
     }
     stages{
-        stage("building"){
-            steps{
-                sh "mvn clean package"
+        stage("Cleanup")
+        {
+            steps
+            {
+                sh 'mvn clean'
             }
         }
-	    stage('Testing') {
-            steps {
-                echo 'Testing the application...'
-                sh "mvn clean test"
+        stage("Compile")
+        {
+            steps{
+                sh 'mvn compile'
+            }
+        }
+        
+        stage("Test")
+        {
+        
+            steps
+            {
+                sh 'mvn test'
+            }
+        }
+        stage("Package")
+        {
+            steps{
+                sh 'mvn package'
             }
         }
 
