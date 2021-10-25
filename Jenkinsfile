@@ -5,16 +5,26 @@ pipeline {
             jdk 'jdk 11'
         }
     stages {
-        stage("Production") {
-            steps {
-                //echo "Production branch"
-                sh "mvn clean package"
+         stage("Cleanup")
+        {
+            steps
+            {
+                sh 'mvn clean'
             }
         }
-	    stage('Testing') {
-            steps {
-                echo 'Testing the application...'
-                sh "mvn clean test"
+        
+        stage("Test")
+        {
+            steps
+            {
+                sh 'mvn test'
+            }
+        }
+        stage("Package")
+        {
+            steps
+            {
+                sh 'mvn package'
             }
         }
     }
